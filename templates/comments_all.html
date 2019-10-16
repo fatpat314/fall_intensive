@@ -1,0 +1,11 @@
+<!-- templates/comments_new.html -->
+{% extends 'base.html' %}
+
+{% block body %}
+    <h2>Hey, it worked!</h2>
+
+        {% for comment in comments %}
+            {% include 'partials/comment.html' %}
+        {% endfor %}
+
+{% endblock %}

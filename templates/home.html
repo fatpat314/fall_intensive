@@ -8,6 +8,13 @@
 
         <!-- Comments -->
     {% include 'partials/comment_form.html' %}
+    <hr>
+
+    <!-- Show Comments -->
+    {% for each in comment %}
+        {{ each.content }}
+    {% endfor %}
+
     </div>
 
 {% endblock %}

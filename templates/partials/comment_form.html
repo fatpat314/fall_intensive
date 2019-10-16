@@ -1,15 +1,9 @@
-<form>
+<form action='/home/comments' method='post'>
+    <input type='hidden' value='{{ _id}}' name='_id'/>
     <feildset>
         <legend>Add A Comment</legend>
         <!-- TITLE -->
-        <div class='form-group'>
-            <label for='comment-title'>Title</label><br>
-            <input class='form-control'
-            id='comment-title'
-            type='text'
-            name='title'
-            placeholder='Title'/>
-        </div>
+
 
         <!-- DESCRIPTION -->
         <div class='form-group'>
@@ -19,6 +13,8 @@
                 name='content'
                 rows='10'
                 placeholde='Your comment...'></textarea>
+
+                
         </div>
     </feildset>
 

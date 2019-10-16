@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Comments</h1>
+
+<a href='/comments/new'>New Comment</a>
+
+{% for comment in comments %}
+    <h2>{{ comment.title }}</h2>
+    <small>{{ comment.description }}</small>
+{% endfor %}
+{% endblock %}
