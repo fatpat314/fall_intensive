@@ -8,7 +8,7 @@ from data import Articles
 
 app = Flask(__name__)
 
-Articiles = Articles()
+Arts = Articles()
 
 # @app.route('/')
 # def index():
@@ -27,7 +27,7 @@ def index():
 
 @app.route('/articles')
 def articles():
-    return render_template('articles.html', articles = Articles)
+    return render_template('articles.html', articles = Arts)
 
 if __name__ == '__main__':
     app.run(debug=True)
