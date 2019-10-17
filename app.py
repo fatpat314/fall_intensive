@@ -25,9 +25,9 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Show all playlists."""
-    # comment = comments.find().sort([('_id', pymongo.DESCENDING)])
-    # ,comment=comment
-    return render_template('home.html')
+    comment = comments.find().sort([('_id', pymongo.DESCENDING)])
+
+    return render_template('home.html', comment=comment)
 
 # @app.route('/articles')
 # def articles():
