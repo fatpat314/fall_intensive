@@ -1,20 +1,39 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
+
 {% block body %}
+<style>
+        body{
+            background-color:black;}
+        h1{ border-style: inset;}
+        h2{ border-style: solid;}
+</style>
+
     <div class="jumbotron text-center">
-        <h1>Welcome To Rando Blog</h1>
-        <p class="lead">This is a test of this python information system</p><br>
+        <h1 style="color:black;">Welcome To The Void</h1>
+
+        <p class="lead">Please feel free to scream into the void</p><br>
 
         <!-- Comments -->
     {% include 'partials/comment_form.html' %}
     <hr>
+    </div>
 
     <!-- Show Comments -->
+
     {% for each in comment %}
-        {{ each.content }}
+    <div class="lead text-center">
+        <div class="container">
+        <font color="white">
+
+        <h2> {{ each.content }} </h2>
+
+        </font>
+        </div>
+    </div>
     {% endfor %}
 
-    </div>
+
 
 {% endblock %}
