@@ -15,6 +15,7 @@
 
         <p class="lead">Please feel free to scream into the void</p><br>
 
+
         <!-- Comments -->
     {% include 'partials/comment_form.html' %}
     <hr>
@@ -23,17 +24,24 @@
     <!-- Show Comments -->
 
     {% for each in comment %}
+
     <div class="lead text-center">
         <div class="container">
         <font color="white">
 
-        <h2> {{ each.content }} </h2>
+
+        <h2>
+            {{ each.content }}
+                <form method="POST" action="/home/{{each._id}}/delete">
+                    <button class='btn btn-link' type='submit'>DESTROY</button>
+                </form>
+        </h2>
+
 
         </font>
         </div>
     </div>
     {% endfor %}
-
 
 
 {% endblock %}
