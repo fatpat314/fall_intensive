@@ -13,11 +13,11 @@ else:
     client = MongoClient()
 
 # db = client['void']
-
+db = client.Comments
 comments = db.comments
 
 # client = MongoClient()
-# db = client.Comments
+
 # comments = db.comments
 
 app = Flask(__name__)
