@@ -34,7 +34,7 @@ app = Flask(__name__)
 def index():
     """Show all playlists."""
     comment = comments.find() #.sort([('_id', pymongo.DESCENDING)]) # possible issue with pymongo when opening heroku
-
+    print("comment")
     return render_template('home.html', comment=comment)
 
 # @app.route('/articles')
