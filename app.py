@@ -12,7 +12,7 @@ if 'MONGODB_URI' in os.environ.keys():
 else:
     client = MongoClient()
 
-db = client['void']
+# db = client['void']
 
 comments = db.comments
 
