@@ -2,10 +2,18 @@ from flask import Flask, render_template, redirect, request, url_for
 import pymongo
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+import os
+
 #from data import Articles
 
-client = MongoClient()
-db = client.Comments
+#client = MongoClient(os.environ['MONGODB_URI'])
+if 'MONGODB_URI' in os.environ.keys():
+    client = MongoClient(os.environ['MONGODB_URI'])
+else:
+    client = MongoClient()
+
+db = client['void']
+# db = client.Comments
 comments = db.comments
 
 app = Flask(__name__)
@@ -25,7 +33,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     """Show all playlists."""
-    comment = comments.find().sort([('_id', pymongo.DESCENDING)])
+    comment = comments.find() #.sort([('_id', pymongo.DESCENDING)]) # possible issue with pymongo when opening heroku
 
     return render_template('home.html', comment=comment)
 
